@@ -47,7 +47,7 @@ export function calculateMonthlyTotal(rent: number, fee: number): number {
  * @param isRenewal この年が更新年であるかどうか
  * @returns 更新料（該当しない場合は0）
  */
-function calculateRenewalFee(
+export function calculateRenewalFee(
   rent: number,
   renewFee: number,
   isRenewal: boolean,

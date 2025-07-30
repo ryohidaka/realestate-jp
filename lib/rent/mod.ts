@@ -1,2 +1,3 @@
 export { getRentSummary } from "./summary.ts";
-export type { RentSummary } from "./types.ts";
+export { getRentTransitions } from "./transitions.ts";
+export type { RentSummary, RentTransition } from "./types.ts";
