@@ -30,3 +30,20 @@ export function calculateMonthlyInterest(
   const remainingPrincipal = loanAmount - monthlyPrincipal * monthIndex;
   return remainingPrincipal * (annualRate / 100 / MONTHS_PER_YEAR);
 }
+
+/**
+ * 元利均等の月額返済額を計算する
+ *
+ * @param principal 借入金額（円）
+ * @param annualRate 年利（%）
+ * @param months 返済期間（月単位）
+ * @returns 月々の返済額（円）
+ */
+export function calculateMonthlyPI(
+  principal: number,
+  annualRate: number,
+  months: number,
+): number {
+  const r = annualRate / 100 / MONTHS_PER_YEAR;
+  return (principal * r) / (1 - Math.pow(1 + r, -months));
+}
