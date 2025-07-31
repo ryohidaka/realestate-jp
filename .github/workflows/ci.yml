@@ -1,0 +1,32 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: canary
+          cache: true
+
+      - name: Run fmt
+        run: |
+          deno fmt --check
+
+      - name: Run lint
+        run: |
+          deno lint
+
+      - name: Check mod.ts
+        run: |
+          deno check mod.ts
+
+      - name: Run tests
+        run: |
+          deno test -A --doc --parallel
