@@ -29,3 +29,8 @@ deno add jsr:@japanese/realestate
 ```sh
 import * as realestate from "@japanese/realestate";
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
+for details.
