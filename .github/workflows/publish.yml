@@ -1,0 +1,49 @@
+name: Publish
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+  workflow_dispatch:
+    inputs:
+      publish_jsr:
+        description: "Publish to JSR"
+        required: false
+        type: boolean
+        default: false
+      publish_npm:
+        description: "Publish to npm"
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  publish-npm:
+    if: github.event_name == 'pull_request' || github.event.inputs.publish_npm == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set TAG environment variable
+        run: echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+      - name: Build npm package
+        run: deno task build:npm $TAG
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: "./npm/package.json"
+
+  publish-jsr:
+    if: github.event_name == 'pull_request' || github.event.inputs.publish_jsr == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish to JSR
+        run: npx jsr publish
