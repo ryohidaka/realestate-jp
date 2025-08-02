@@ -7,3 +7,25 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 不動産関連のユーティリティ関数を提供するライブラリ
+
+## インストール
+
+### Node.js
+
+```sh
+npm i realestate-jp
+```
+
+### Deno
+
+#### Add Package
+
+```sh
+deno add jsr:@japanese/realestate
+```
+
+#### Import symbol
+
+```sh
+import * as realestate from "@japanese/realestate";
+```
