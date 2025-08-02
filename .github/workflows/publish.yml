@@ -27,8 +27,15 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set TAG environment variable
-        run: echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+        run: echo "TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: canary
+          cache: true
       - name: Build npm package
         run: deno task build:npm $TAG
       - name: Publish to npm
