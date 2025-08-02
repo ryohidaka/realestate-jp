@@ -1,4 +1,4 @@
-import { calcEqualPrincipalAndInterest } from "realestate-jp";
+import { calcEqualPrincipalAndInterest } from "@japanese/realestate";
 
 const principal = 30000000; // 借入金額
 const rate = 1.5; // 年利

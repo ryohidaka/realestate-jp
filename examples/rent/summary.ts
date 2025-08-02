@@ -1,4 +1,4 @@
-import { getRentSummary } from "realestate-jp";
+import { getRentSummary } from "@japanese/realestate";
 
 const monthlyRent = 85000; // 月額家賃
 const year = 10; // 契約年数

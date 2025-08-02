@@ -1,4 +1,4 @@
-import { getRentTransitions } from "realestate-jp";
+import { getRentTransitions } from "@japanese/realestate";
 
 const rentPerMonth = 85000; // 月額家賃
 const contractYears = 10; // 契約年数

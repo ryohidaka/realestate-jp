@@ -1,4 +1,4 @@
-# realestate-jp
+# @japanese/realestate
 
 [![codecov](https://codecov.io/gh/ryohidaka/realestate-jp/graph/badge.svg?token=2huHweDOwW)](https://codecov.io/gh/ryohidaka/realestate-jp)
 

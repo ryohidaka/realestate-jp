@@ -18,7 +18,7 @@ import {
  *
  * @example 使用例
  * ```ts
- * import { getRentTransitions } from "realestate-jp";
+ * import { getRentTransitions } from "@japanese/realestate";
  *
  * const transitions = getRentTransitions(85000, 10, 5000, 2, 1, 5);
  * console.table(transitions);

@@ -19,7 +19,7 @@ import {
  *
  * @example 使用例
  * ```ts
- * import { getRentSummary } from "realestate-jp";
+ * import { getRentSummary } from "@japanese/realestate";
  *
  * const summary = getRentSummary(85000, 10, 5000, 2, 1, 5);
  * console.log(summary);
