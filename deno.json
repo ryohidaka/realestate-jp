@@ -26,5 +26,8 @@
   "homepage": "https://github.com/ryohidaka/realestate-jp#readme",
   "bugs": {
     "url": "https://github.com/ryohidaka/realestate-jp/issues"
+  },
+  "fmt": {
+    "exclude": ["CHANGELOG.md"]
   }
 }
