@@ -2,6 +2,9 @@ name: CI
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -41,3 +44,7 @@ jobs:
         with:
           files: ./coverage.lcov
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Dry-run deno publish
+        run: |
+          npx jsr publish --dry-run --allow-dirty
