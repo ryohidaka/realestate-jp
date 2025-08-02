@@ -30,6 +30,10 @@ deno add jsr:@japanese/realestate
 import * as realestate from "@japanese/realestate";
 ```
 
+## ドキュメント
+
+- https://jsr.io/@japanese/realestate/doc
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
