@@ -39,7 +39,7 @@ jobs:
       - name: Build npm package
         run: deno task build:npm $TAG
       - name: Publish to npm
-        uses: JS-DevTools/npm-publish@v3
+        uses: JS-DevTools/npm-publish@v4
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: "./npm/package.json"
